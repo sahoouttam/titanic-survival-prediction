@@ -3,6 +3,8 @@ import pandas as pd
 
 def load_titanic_data(path="data/titanic.csv"):
     df = pd.read_csv(path)
+    print(df.columns.tolist())
+    print(df.head(2))
     print(f" Dataset loaded successfully!")
     print(f" Shape: {df.shape[0]} rows × {df.shape[1]} columns\n")
     return df
