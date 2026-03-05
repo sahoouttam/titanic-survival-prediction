@@ -91,11 +91,11 @@ passenger = {
 
 ## ✨ Features
 
-- 🔍 **Exploratory Data Analysis** — survival breakdowns by sex, class, age, fare, and embarkation port with 6 auto-saved charts
-- 🛠️ **Feature Engineering** — extracts title from passenger name, builds family size, log-transforms fare, and bins age into groups
-- 🧹 **Smart Preprocessing** — group-based missing value imputation, one-hot encoding, stratified train/test split, and StandardScaler with zero data leakage
-- 🤖 **5 Models Compared** — Logistic Regression, Decision Tree, Random Forest, XGBoost, and SVM trained and benchmarked side by side
-- 📈 **Comprehensive Evaluation** — Accuracy, Precision, Recall, F1, ROC-AUC, confusion matrices, ROC curves, and 5-fold cross-validation
-- ⚙️ **Hyperparameter Tuning** — GridSearchCV with 5-fold CV on Random Forest across 240+ parameter combinations
-- 📊 **Feature Importance** — bar chart of top 15 features with interpretation, validating EDA findings
-- 🔮 **Prediction Pipeline** — predict survival for any new passenger using saved model artifacts (`.pkl` files)
+- **Exploratory Data Analysis** — survival breakdowns by sex, class, age, fare, and embarkation port with 6 auto-saved charts
+- **Feature Engineering** — extracts title from passenger name, builds family size, log-transforms fare, and bins age into groups
+- **Smart Preprocessing** — group-based missing value imputation, one-hot encoding, stratified train/test split, and StandardScaler with zero data leakage
+- **5 Models Compared** — Logistic Regression, Decision Tree, Random Forest, XGBoost, and SVM trained and benchmarked side by side
+- **Comprehensive Evaluation** — Accuracy, Precision, Recall, F1, ROC-AUC, confusion matrices, ROC curves, and 5-fold cross-validation
+- **Hyperparameter Tuning** — GridSearchCV with 5-fold CV on Random Forest across 240+ parameter combinations
+- **Feature Importance** — bar chart of top 15 features with interpretation, validating EDA findings
+- **Prediction Pipeline** — predict survival for any new passenger using saved model artifacts (`.pkl` files)
