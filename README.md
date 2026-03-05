@@ -99,9 +99,3 @@ passenger = {
 - ⚙️ **Hyperparameter Tuning** — GridSearchCV with 5-fold CV on Random Forest across 240+ parameter combinations
 - 📊 **Feature Importance** — bar chart of top 15 features with interpretation, validating EDA findings
 - 🔮 **Prediction Pipeline** — predict survival for any new passenger using saved model artifacts (`.pkl` files)
-
----
-
-## 📄 License
-
-MIT License — free to use, modify, and distribute.
