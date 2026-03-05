@@ -128,16 +128,19 @@ def preprocess_pipeline(df, test_size=0.2, random_state=42):
     X_train[scale_cols] = scaler.fit_transform(X_train[scale_cols])
     X_test[scale_cols] = scaler.transform(X_test[scale_cols])
 
+    feature_cols = list(X_train.columns)
+
     joblib.dump(scaler, 'models/scaler.pkl')
     joblib.dump(scale_cols, 'models/scale_cols.pkl')
+    joblib.dump(feature_cols, 'models/feature_cols.pkl')
     print("Scaler saved to models/scaler.pkl")
 
     print(f"\n Preprocessing complete!")
     print(f" X_train shape: {X_train.shape}")
     print(f" X_test shape: {X_test.shape}")
-    print(f" Feature columns: {list(X_train.columns)}")
+    print(f" Feature columns: {feature_cols}")
 
-    return X_train, X_test, y_train, y_test, scaler, list(X_train.columns)
+    return X_train, X_test, y_train, y_test, scaler, feature_cols
 
 
 if __name__ == "__main__":
