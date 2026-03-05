@@ -1,12 +1,6 @@
 # 🚢 Titanic Survival Prediction — Complete ML Pipeline
 
-![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python&logoColor=white)
-![scikit-learn](https://img.shields.io/badge/scikit--learn-1.2%2B-orange?logo=scikit-learn&logoColor=white)
-![XGBoost](https://img.shields.io/badge/XGBoost-1.7%2B-red)
-![License](https://img.shields.io/badge/License-MIT-green)
-![Status](https://img.shields.io/badge/Status-Complete-brightgreen)
-
-A complete, beginner-friendly machine learning pipeline predicting Titanic passenger survival — built step by step, with every decision explained.
+An end-to-end machine learning pipeline predicting Titanic passenger survival.
 
 ---
 
@@ -19,82 +13,6 @@ A complete, beginner-friendly machine learning pipeline predicting Titanic passe
 | **Random Forest** ⭐ | **0.715** | **0.727** | **0.765** |
 | SVM | 0.687 | 0.702 | 0.750 |
 | XGBoost | 0.709 | 0.718 | 0.761 |
-
----
-
-## 📁 Project Structure
-```
-titanic-survival-prediction/
-├── src/
-│   ├── step1_load_data.py
-│   ├── step2_eda.py
-│   ├── step3_preprocessing.py
-│   ├── step4_models.py
-│   ├── step5_evaluation.py
-│   ├── step6_tuning.py
-│   ├── step7_feature_importance.py
-│   └── step8_predict.py
-├── data/
-│   └── titanic.csv
-├── models/
-│   ├── best_random_forest_tuned.pkl
-│   ├── scaler.pkl
-│   ├── scale_cols.pkl
-│   └── feature_cols.pkl
-├── outputs/
-│   ├── 01_eda_overview.png
-│   ├── 02_model_evaluation.png
-│   └── 03_feature_importance.png
-├── run_all.py
-├── requirements.txt
-└── README.md
-```
-
----
-
-## ⚡ Quick Start
-
-### 1. Clone the repository
-```bash
-git clone https://github.com/your-username/titanic-survival-prediction.git
-cd titanic-survival-prediction
-```
-
-### 2. Create a virtual environment
-```bash
-python -m venv .venv
-
-# Windows
-.venv\Scripts\activate
-
-# macOS / Linux
-source .venv/bin/activate
-```
-
-### 3. Install dependencies
-```bash
-pip install -r requirements.txt
-```
-
-### 4. Add the dataset
-Download `train.csv` from [Kaggle Titanic Competition](https://www.kaggle.com/competitions/titanic/data), rename it to `titanic.csv`, and place it inside the `data/` folder.
-
-### 5. Run the full pipeline
-```bash
-python run_all.py
-```
-
-Or run steps individually:
-```bash
-python src/step1_load_data.py
-python src/step2_eda.py
-python src/step3_preprocessing.py
-python src/step4_models.py
-python src/step5_evaluation.py
-python src/step6_tuning.py
-python src/step7_feature_importance.py
-python src/step8_predict.py
-```
 
 ---
 
@@ -171,54 +89,16 @@ passenger = {
 
 ---
 
-## 📦 Requirements
-```
-pandas>=1.5.0
-numpy>=1.23.0
-scikit-learn>=1.2.0
-matplotlib>=3.6.0
-seaborn>=0.12.0
-scipy>=1.10.0
-xgboost>=1.7.0
-joblib>=1.2.0
-```
+## ✨ Features
 
----
-
-## 💡 Key Learnings
-
-| Concept | Lesson |
-|---------|--------|
-| Data Leakage | Split before scaling — never fit scaler on test data |
-| Class Imbalance | 38% survival — use F1 + AUC, not accuracy alone |
-| Feature Engineering | `title` from name outperformed switching algorithms |
-| Missing Values | Group median imputation beats global median |
-| Cross-Validation | More reliable than a single train/test split |
-| Hyperparameter Tuning | Gains are modest (~1-2%) — features matter more |
-
----
-
-## ⚠️ Common Mistakes Avoided
-
-| Wrong | Right |
-|-------|-------|
-| `scaler.fit_transform(X_test)` | `scaler.transform(X_test)` |
-| `np.log(fare)` | `np.log1p(fare)` — handles fare=0 |
-| Label encode `embarked` | One-hot encode nominal categories |
-| Global median for age | Median by title group |
-| `eval_metric='logless'` | `eval_metric='logloss'` |
-| `df.concat(...)` | `pd.concat(...)` |
-
----
-
-## 🚀 What to Try Next
-
-- [ ] Wrap preprocessing in `sklearn.Pipeline` + `ColumnTransformer`
-- [ ] Handle class imbalance with SMOTE or `class_weight='balanced'`
-- [ ] Try LightGBM or CatBoost
-- [ ] Add SHAP values for individual prediction explanations
-- [ ] Deploy with Flask or FastAPI
-- [ ] Submit to the [Kaggle Titanic leaderboard](https://www.kaggle.com/competitions/titanic)
+- 🔍 **Exploratory Data Analysis** — survival breakdowns by sex, class, age, fare, and embarkation port with 6 auto-saved charts
+- 🛠️ **Feature Engineering** — extracts title from passenger name, builds family size, log-transforms fare, and bins age into groups
+- 🧹 **Smart Preprocessing** — group-based missing value imputation, one-hot encoding, stratified train/test split, and StandardScaler with zero data leakage
+- 🤖 **5 Models Compared** — Logistic Regression, Decision Tree, Random Forest, XGBoost, and SVM trained and benchmarked side by side
+- 📈 **Comprehensive Evaluation** — Accuracy, Precision, Recall, F1, ROC-AUC, confusion matrices, ROC curves, and 5-fold cross-validation
+- ⚙️ **Hyperparameter Tuning** — GridSearchCV with 5-fold CV on Random Forest across 240+ parameter combinations
+- 📊 **Feature Importance** — bar chart of top 15 features with interpretation, validating EDA findings
+- 🔮 **Prediction Pipeline** — predict survival for any new passenger using saved model artifacts (`.pkl` files)
 
 ---
 
